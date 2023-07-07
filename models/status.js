@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
-const ResponsableSchema = new Schema ({
-  task_responsable: {
+const StatuSchema = new Schema ({
+  status: {
     type: String,
     require: true,
-    maxLength: 100
+    maxLength: 50
   }
 })
-module.exports = mongoose.model('TaskResponsable', ResponsableSchema)
+module.exports = mongoose.model('Status', StatuSchema)
