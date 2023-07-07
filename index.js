@@ -11,7 +11,7 @@ const statusRouter = require ('./routes/status')
 const app = express()
 const port = 3000
 
-//middlewares
+
 app.set ('port', port)
 app.set ('view engine', 'ejs')
 app.use (express.static("public"))
@@ -22,17 +22,12 @@ app.use ('/api/todo', toDoRouter)
 app.use ('/api/responsable', responsableRouter)
 app.use ('/api/status', statusRouter)
 
-// app.get ('/', (req,res) =>{
-//   res.render(toDoRouter)
-// })
 
 app.get('/', (req, res) => {
   res.render('index.ejs')
 })
 
-// app.get  ("/", (req, res) => {
-//   res.send ("Hola mundo");
-// })
+
 
 
 mongoose.connect(process.env.MONGO_DB_URI)
